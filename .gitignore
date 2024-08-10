@@ -1,0 +1,9 @@
+/home/user/khtml-ai-llm-tt/.env
+data
+vectordb
+chroma
+.venv
+.idx
+.vscode
+devserver.sh
+__pycache__
