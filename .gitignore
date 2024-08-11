@@ -1,4 +1,3 @@
-/home/user/khtml-ai-llm-tt/.env
 data
 vectordb
 chroma
@@ -7,3 +6,4 @@ chroma
 .vscode
 devserver.sh
 __pycache__
+.env

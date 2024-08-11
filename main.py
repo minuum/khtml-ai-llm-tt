@@ -1,14 +1,15 @@
 import os
+from fastapi import FastAPI
+from starlette.responses import PlainTextResponse
 
-from flask import Flask
+app = FastAPI()
 
-app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-  """Example Hello World route."""
-  name = os.environ.get("NAME", "World")
-  return f"Hello {name}!"
+@app.get("/", response_class=PlainTextResponse)
+async def hello_world():
+    """Example Hello World route."""
+    name = os.environ.get("NAME", "World")
+    return f"Hello {name}!"
 
 if __name__ == "__main__":
-  app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 3000)))
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 3000)), reload=True)
